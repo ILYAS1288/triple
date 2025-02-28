@@ -8,7 +8,7 @@ export default function HeroSection() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/1.jpg"
+          src="/images/2.jpg"
           alt="Triple Organization Hero Background"
           fill
           className="object-cover"

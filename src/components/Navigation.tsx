@@ -13,12 +13,15 @@ export default function Navigation() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="text-2xl font-bold text-primary">
-              Triple Org
+              Triple Organization
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
+          <Link href="/" className="text-gray-700 hover:text-primary">
+              Home
+            </Link>
             <Link href="/about" className="text-gray-700 hover:text-primary">
               About
             </Link>
