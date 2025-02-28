@@ -111,7 +111,7 @@ export default function EducationServicesPage() {
             </div>
             <div className="relative h-96 rounded-xl overflow-hidden">
               <Image
-                src="/images/2.jpg"
+                src="/images/3.jpg"
                 alt="Learning Programs"
                 fill
                 className="object-cover"

@@ -62,7 +62,7 @@ export default function EducationPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative h-96 rounded-lg overflow-hidden">
               <Image
-                src="/images/2.jpg"
+                src="/images/3.jpg"
                 alt="Learning Community"
                 fill
                 className="object-cover"
