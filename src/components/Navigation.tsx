@@ -59,6 +59,12 @@ export default function Navigation() {
         {isMobileMenuOpen && (
           <div className="md:hidden px-4 pb-4 space-y-2">
             <Link 
+              href="" 
+              className="block py-2 text-gray-700 hover:text-primary"
+              onClick={() => setIsMobileMenuOpen(false)}
+            > Home</Link>
+
+            <Link 
               href="/about" 
               className="block py-2 text-gray-700 hover:text-primary"
               onClick={() => setIsMobileMenuOpen(false)}
