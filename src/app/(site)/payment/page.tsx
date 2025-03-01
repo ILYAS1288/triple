@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { saveAs } from "file-saver";
+// import { saveAs } from "file-saver";
 
 export default function PaymentPage() {
   const router = useRouter();
@@ -27,7 +27,7 @@ export default function PaymentPage() {
       Email: johndoe@example.com
       Payment Method: ${paymentMethod.toUpperCase()}
       Amount: $99.99
-      Status: Paid ✅
+      Status: Paid 
     `;
     const blob = new Blob([invoiceData], { type: "text/plain;charset=utf-8" });
     saveAs(blob, "Invoice.txt");

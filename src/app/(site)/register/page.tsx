@@ -19,7 +19,7 @@ export default function RegisterPage() {
     e.preventDefault();
     console.log("Form Data:", formData);
     
-    // TODO: Add API call for registration here
+    
     
     // Redirect to the Payment page
     router.push("/payment");
