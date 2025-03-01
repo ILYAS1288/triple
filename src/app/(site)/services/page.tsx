@@ -144,6 +144,7 @@ export default function EducationServicesPage() {
           </div>
         </div>
       </section>
+      
 
       {/* CTA Section */}
       <section className="py-16 bg-gray-50">

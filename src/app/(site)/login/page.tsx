@@ -15,7 +15,7 @@ export default function LoginPage() {
     <div className="relative min-h-screen flex items-center justify-center bg-gray-900">
       {/* Background Image */}
       <Image
-        src="/images/2.jpg" // Replace with your background image
+        src="/images/2.jpg" 
         alt="Background"
         fill
         className="object-cover opacity-50"
@@ -82,8 +82,11 @@ export default function LoginPage() {
           <button
             type="button"
             className="w-full bg-green-600 text-white py-2 px-4 rounded-md mt-2 hover:bg-green-700 focus:ring-2 focus:ring-green-500"
-          >
-            Register
+          >   
+              <a href="register" >
+              Register
+            </a>
+           
           </button>
         </form>
 
