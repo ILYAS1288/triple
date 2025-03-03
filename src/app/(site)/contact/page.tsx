@@ -1,5 +1,5 @@
 // src/app/contact/page.tsx
-'use client'; // Needed for form interactivity
+'use client'; 
 
 import { useState } from 'react';
 import Image from 'next/image';
@@ -57,7 +57,7 @@ export default function ContactPage() {
                 <p className="text-gray-600">
                   123 Education Boulevard<br />
                   Knowledge City, KC 12345<br />
-                  United States
+                  Khaplu 
                 </p>
               </div>
             </div>

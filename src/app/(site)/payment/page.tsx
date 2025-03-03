@@ -8,7 +8,7 @@ export default function PaymentPage() {
   const router = useRouter();
   const [paymentMethod, setPaymentMethod] = useState("credit_card");
 
-  // Handle payment method selection
+  // Handle payment method
   const handlePaymentMethodChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPaymentMethod(e.target.value);
   };
