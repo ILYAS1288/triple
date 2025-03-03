@@ -17,6 +17,7 @@ interface Event {
   category: "education" | "sports" | "community";
 }
 
+
 export default function EventsPage() {
   const [events, setEvents] = useState<Event[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-// import { saveAs } from "file-saver";
+
 
 export default function PaymentPage() {
   const router = useRouter();
@@ -20,19 +20,23 @@ export default function PaymentPage() {
   };
 
   // Generate & Download Invoice
-  const handleDownloadInvoice = () => {
+  const handleDownloadInvoice = async () => {
     const invoiceData = `
       Invoice No: #123456
       Name: John Doe
       Email: johndoe@example.com
       Payment Method: ${paymentMethod.toUpperCase()}
       Amount: $99.99
-      Status: Paid 
+      Status: Paid
     `;
+  
     const blob = new Blob([invoiceData], { type: "text/plain;charset=utf-8" });
-    saveAs(blob, "Invoice.txt");
+  
+    // Dynamically import file-saver
+    const fileSaver = await import("file-saver");
+    fileSaver.saveAs(blob, "Invoice.txt");
   };
-
+  
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100 p-4">
       <div className="w-full max-w-lg p-6 bg-white rounded-2xl shadow-lg">
