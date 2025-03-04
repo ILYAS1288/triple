@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function RegisterPage() {
-  const router = useRouter(); //  Next.js router for navigation
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,12 +17,10 @@ export default function RegisterPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
-    
-    
-    
-    // Redirect to the Payment page
-    router.push("/payment");
+
+    // Redirect to Payment page with form data as query parameters
+    const queryParams = new URLSearchParams(formData).toString();
+    router.push(`/payment?${queryParams}`);
   };
 
   return (
@@ -32,7 +30,6 @@ export default function RegisterPage() {
           Register
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Name Input */}
           <div>
             <label className="block text-gray-700">Name</label>
             <input
@@ -45,7 +42,6 @@ export default function RegisterPage() {
             />
           </div>
 
-          {/* Email Input */}
           <div>
             <label className="block text-gray-700">Email</label>
             <input
@@ -58,7 +54,6 @@ export default function RegisterPage() {
             />
           </div>
 
-          {/* Password Input */}
           <div>
             <label className="block text-gray-700">Password</label>
             <input
@@ -71,7 +66,6 @@ export default function RegisterPage() {
             />
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"

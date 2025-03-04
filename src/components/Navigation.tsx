@@ -34,7 +34,10 @@ export default function Navigation() {
             <Link href="/contact" className="text-gray-700 hover:text-primary">
               Contact
             </Link>
-            
+            <Link href="/member" className="text-gray-700 hover:text-primary">
+              Member
+            </Link>
+
             {/* Login Button */}
             <Link 
               href="/login"

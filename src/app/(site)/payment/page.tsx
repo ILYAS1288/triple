@@ -1,100 +1,52 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-
+import { useSearchParams } from "next/navigation";
 
 export default function PaymentPage() {
-  const router = useRouter();
-  const [paymentMethod, setPaymentMethod] = useState("credit_card");
+  const searchParams = useSearchParams();
 
-  // Handle payment method
-  const handlePaymentMethodChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPaymentMethod(e.target.value);
-  };
+  const name = searchParams.get("name") || "N/A";
+  const email = searchParams.get("email") || "N/A";
 
-  // Fake Payment Processing
-  const handlePayment = () => {
-    alert(`Payment successful with ${paymentMethod.toUpperCase()}!`);
-    router.push("/success");
-  };
+  
+  const transactionId = "TXN123456789";
+  const amount = "PKR 99.99";
+  const date = new Date().toLocaleDateString();
 
-  // Generate & Download Invoice
-  const handleDownloadInvoice = async () => {
-    const invoiceData = `
-      Invoice No: #123456
-      Name: John Doe
-      Email: johndoe@example.com
-      Payment Method: ${paymentMethod.toUpperCase()}
-      Amount: $99.99
-      Status: Paid
-    `;
-  
-    const blob = new Blob([invoiceData], { type: "text/plain;charset=utf-8" });
-  
-    // Dynamically import file-saver
-    const fileSaver = await import("file-saver");
-    fileSaver.saveAs(blob, "Invoice.txt");
-  };
-  
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-100 p-4">
-      <div className="w-full max-w-lg p-6 bg-white rounded-2xl shadow-lg">
-        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">
-          Complete Your Payment 💳
+    <div className="flex min-h-screen items-center justify-center bg-gray-100">
+      <div className="w-full max-w-md p-6 bg-white rounded-2xl shadow-lg">
+        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
+          Payment Receipt
         </h2>
-
-        {/* Payment Methods */}
         <div className="space-y-4">
-          <label className="flex items-center space-x-2 border p-3 rounded-lg cursor-pointer">
-            <input
-              type="radio"
-              name="paymentMethod"
-              value="credit_card"
-              checked={paymentMethod === "credit_card"}
-              onChange={handlePaymentMethodChange}
-            />
-            <span className="font-medium">Credit Card</span>
-          </label>
+          <p className="text-gray-700">
+            <strong>Name:</strong> {name}
+          </p>
+          <p className="text-gray-700">
+            <strong>Email:</strong> {email}
+          </p>
 
-          <label className="flex items-center space-x-2 border p-3 rounded-lg cursor-pointer">
-            <input
-              type="radio"
-              name="paymentMethod"
-              value="paypal"
-              checked={paymentMethod === "paypal"}
-              onChange={handlePaymentMethodChange}
-            />
-            <span className="font-medium">PayPal</span>
-          </label>
+          {/* Payment Slip */}
+          <div className="border p-4 rounded-lg bg-gray-50">
+            <h3 className="text-lg font-semibold text-gray-800">Payment Details</h3>
+            <p className="text-gray-700">
+              <strong>Transaction ID:</strong> {transactionId}
+            </p>
+            <p className="text-gray-700">
+              <strong>Amount Paid:</strong> {amount}
+            </p>
+            <p className="text-gray-700">
+              <strong>Date:</strong> {date}
+            </p>
+          </div>
 
-          <label className="flex items-center space-x-2 border p-3 rounded-lg cursor-pointer">
-            <input
-              type="radio"
-              name="paymentMethod"
-              value="crypto"
-              checked={paymentMethod === "crypto"}
-              onChange={handlePaymentMethodChange}
-            />
-            <span className="font-medium">Cryptocurrency</span>
-          </label>
+          <button
+            className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition"
+          >
+            Download Receipt
+          </button>
         </div>
-
-        {/* Pay Now Button */}
-        <button
-          onClick={handlePayment}
-          className="w-full mt-6 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
-        >
-          Pay Now
-        </button>
-
-        {/* Download Invoice Button */}
-        <button
-          onClick={handleDownloadInvoice}
-          className="w-full mt-3 bg-gray-600 text-white py-3 rounded-lg hover:bg-gray-700 transition"
-        >
-          Download Invoice 📄
-        </button>
       </div>
     </div>
   );
