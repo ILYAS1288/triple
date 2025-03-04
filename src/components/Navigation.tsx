@@ -39,12 +39,14 @@ export default function Navigation() {
             </Link>
 
             {/* Login Button */}
+            <button className='bg-blue-600 ml-4 bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition-colors '>
             <Link 
               href="/login"
-              className="ml-4 bg-primary text-black px-4 py-2 rounded-lg hover:bg-secondary transition-colors"
+              className=""
             >
               Login
             </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -62,7 +64,7 @@ export default function Navigation() {
         {isMobileMenuOpen && (
           <div className="md:hidden px-4 pb-4 space-y-2">
             <Link 
-              href="" 
+              href="/" 
               className="block py-2 text-gray-700 hover:text-primary"
               onClick={() => setIsMobileMenuOpen(false)}
             > Home</Link>
@@ -95,13 +97,15 @@ export default function Navigation() {
             >
               Contact
             </Link>
-            <Link
+           <button className='bg-blue-600 inline-block mt-4  bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary  '>
+           <Link
               href="/login"
-              className="inline-block mt-4 w-full bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary text-center"
+              className=""
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Login
             </Link>
+           </button>
           </div>
         )}
       </div>
