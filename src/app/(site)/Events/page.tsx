@@ -17,6 +17,8 @@ interface Event {
   category: "education" | "sports" | "community";
 }
 
+// Simulated admin check (Replace with real authentication)
+const isAdmin = true; // Change to false for non-admins
 
 export default function EventsPage() {
   const [events, setEvents] = useState<Event[]>([]);
@@ -29,6 +31,10 @@ export default function EventsPage() {
   });
 
   const addEvent = () => {
+    if (!isAdmin) {
+      alert("Only admins can add events.");
+      return;
+    }
     setEvents([...events, { ...newEvent, id: Date.now() }]);
     setIsModalOpen(false);
     setNewEvent({ title: "", date: "", description: "", category: "education" });
@@ -77,15 +83,19 @@ export default function EventsPage() {
             >
               <Icon className="h-10 w-10 md:h-12 md:w-12 text-blue-600 mb-4" />
               <h2 className="text-lg md:text-xl font-semibold mb-3">{label}</h2>
-              <button
-                onClick={() => {
-                  setNewEvent((prev) => ({ ...prev, category: type as any }));
-                  setIsModalOpen(true);
-                }}
-                className="flex items-center gap-2 px-3 py-2 md:px-4 md:py-2.5 bg-green-600 text-white rounded hover:bg-green-700 transition"
-              >
-                <PlusCircleIcon className="h-5 w-5" /> Add Event
-              </button>
+
+              {/* Only show Add Event button for admins */}
+              {isAdmin && (
+                <button
+                  onClick={() => {
+                    setNewEvent((prev) => ({ ...prev, category: type as any }));
+                    setIsModalOpen(true);
+                  }}
+                  className="flex items-center gap-2 px-3 py-2 md:px-4 md:py-2.5 bg-green-600 text-white rounded hover:bg-green-700 transition"
+                >
+                  <PlusCircleIcon className="h-5 w-5" /> Add Event
+                </button>
+              )}
 
               {/* Event List */}
               <div className="mt-4 space-y-4">
@@ -101,12 +111,15 @@ export default function EventsPage() {
                         <p className="text-sm text-gray-600">{event.date}</p>
                         <p className="text-sm text-gray-700 mt-1">{event.description}</p>
                       </div>
-                      <button
-                        onClick={() => removeEvent(event.id)}
-                        className="text-red-600 hover:text-red-800"
-                      >
-                        <TrashIcon className="h-5 w-5" />
-                      </button>
+                      {/* Only admins can remove events */}
+                      {isAdmin && (
+                        <button
+                          onClick={() => removeEvent(event.id)}
+                          className="text-red-600 hover:text-red-800"
+                        >
+                          <TrashIcon className="h-5 w-5" />
+                        </button>
+                      )}
                     </div>
                   ))}
               </div>
@@ -148,7 +161,8 @@ export default function EventsPage() {
               </button>
               <button
                 onClick={addEvent}
-                className="px-4 py-2 bg-blue-600 text-white rounded"
+                className={`px-4 py-2 ${isAdmin ? "bg-blue-600" : "bg-gray-400"} text-white rounded`}
+                disabled={!isAdmin}
               >
                 Add Event
               </button>
