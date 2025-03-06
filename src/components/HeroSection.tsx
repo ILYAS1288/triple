@@ -6,6 +6,7 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-[calc(100vh-10rem)] flex items-center">
       {/* Background Image with Overlay */}
+      
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/2.jpg"

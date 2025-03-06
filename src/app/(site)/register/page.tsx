@@ -18,7 +18,7 @@ export default function RegisterPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Redirect to Payment page with form data as query parameters
+
     const queryParams = new URLSearchParams(formData).toString();
     router.push(`/payment?${queryParams}`);
   };

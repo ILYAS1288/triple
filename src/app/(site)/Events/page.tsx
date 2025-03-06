@@ -17,7 +17,7 @@ interface Event {
   category: "education" | "sports" | "community";
 }
 
-// Simulated admin check (Replace with real authentication)
+
 const isAdmin = true; // Change to false for non-admins
 
 export default function EventsPage() {
