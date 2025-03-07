@@ -26,7 +26,7 @@ export default function LoginPage() {
       return;
     }
 
-    // Redirect based on role home 
+    // Redirect based  on role home 
     if (data.role === "admin") {
       router.push("/");
     } else {

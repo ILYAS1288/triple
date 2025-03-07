@@ -16,7 +16,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add your form submission logic here
+    // Add your form  submission logic here
     console.log(formData);
   };
 
@@ -43,7 +43,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Content */}
+      {/* Contact  Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Information */}
@@ -98,7 +98,7 @@ export default function ContactPage() {
           </div>
 
 
-          {/* Contact Form */}
+          {/* Contact  Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700">

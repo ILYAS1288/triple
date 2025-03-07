@@ -49,7 +49,7 @@ export default function Navigation() {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile  Menu Button */}
           <div className="flex items-center md:hidden">
             <button 
               className="p-2"
