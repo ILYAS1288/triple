@@ -21,6 +21,7 @@ const MemberPage = () => {
           <p className="text-gray-700">
             <strong>Name:</strong> {user.name}
           </p>
+          
           <p className="text-gray-700">
             <strong>Email:</strong> {user.email}
           </p>
