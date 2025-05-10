@@ -8,38 +8,10 @@ export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
-    setLoading(true);
-
-    try {
-      const res = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.error || "Login failed");
-      }
-
-      // Redirect based on role
-      if (data.user.role === "admin") {
-        router.push("/admin/dashboard");
-      } else {
-        router.push("/user/dashboard");
-      }
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred");
-    } finally {
-      setLoading(false);
-    }
+    window.location.href = "http://localhost:3001";
   };
 
   return (
@@ -49,7 +21,8 @@ export default function LoginPage() {
         alt="Background"
         fill
         className="object-cover opacity-50"
-        priority
+        sizes="100vw"
+        quality={75}
       />
       <div className="absolute inset-0 bg-black/40"></div>
 
@@ -57,12 +30,6 @@ export default function LoginPage() {
         <h1 className="text-3xl font-bold text-gray-900 text-center mb-6">
           Sign In
         </h1>
-
-        {error && (
-          <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded mb-4">
-            {error}
-          </div>
-        )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -97,10 +64,9 @@ export default function LoginPage() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 disabled:opacity-50"
-            disabled={loading}
+            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700"
           >
-            {loading ? "Signing in..." : "Sign in"}
+            Sign in
           </button>
 
           <a
@@ -113,4 +79,4 @@ export default function LoginPage() {
       </div>
     </div>
   );
-}
+} 
