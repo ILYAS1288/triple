@@ -22,7 +22,7 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
         <div className="max-w-2xl ml-0 lg:ml-20">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight text-left">
-            Triple Organization
+         Triple E Organization Gilgit-Baltistan
           </h1>
           <p className="text-lg md:text-xl text-gray-200 mb-8 text-left">
            Works to ensure that all children have access to quality education, regardless of their background or circumstances. Provides educational resources, supports teacher training, and promotes inclusive education.

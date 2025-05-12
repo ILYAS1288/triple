@@ -4,7 +4,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Triple Organization</h3>
+              <h3 className="text-xl font-bold mb-4">Triple E Organization Gilgit-Baltistan</h3>
               <p className="text-gray-400">Empowering businesses through technology</p>
             </div>
             <div>
