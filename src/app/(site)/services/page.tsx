@@ -73,7 +73,7 @@ export default function EducationServicesPage() {
         </div>
       </section>
 
-      {/* Specialized Programs */}
+    
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center"> 

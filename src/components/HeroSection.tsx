@@ -27,6 +27,7 @@ export default function HeroSection() {
           <p className="text-lg md:text-xl text-gray-200 mb-8 text-left">
            Works to ensure that all children have access to quality education, regardless of their background or circumstances. Provides educational resources, supports teacher training, and promotes inclusive education.
           </p>
+          
           <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Link
               href="/contact"

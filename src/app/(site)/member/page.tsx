@@ -17,6 +17,7 @@ const MemberPage = () => {
         <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
           Member Profile
         </h2>
+        
         <div className="space-y-4">
           <p className="text-gray-700">
             <strong>Name:</strong> {user.name}
