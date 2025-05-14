@@ -18,7 +18,7 @@ interface Event {
 }
 
 
-const isAdmin = true; // Change to false for non-admins
+const isAdmin = true; 
 
 export default function EventsPage() {
   const [events, setEvents] = useState<Event[]>([]);

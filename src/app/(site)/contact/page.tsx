@@ -1,4 +1,4 @@
-// src/app/contact/page.tsx
+
 'use client';
 
 import { useState } from 'react';
@@ -188,6 +188,7 @@ export default function ContactPage() {
 
         {/* Map Section */}
         <div className="mt-16 rounded-xl overflow-hidden shadow-xl">
+       
         <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.1234567890123!2d76.34567890123456!3d35.67890123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e6a1234567890%3A0xabcdef1234567890!2sKhaplu%2C%20Gilgit-Baltistan%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1616161616161!5m2!1sen!2sus"
         width="100%"

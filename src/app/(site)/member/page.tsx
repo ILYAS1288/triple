@@ -9,6 +9,8 @@ const MemberPage = () => {
     email: "MuhammadRaiz@example.com",
     memberSince: "2023-06-15",
     membershipType: "Standard",
+
+    
   };
 
   return (

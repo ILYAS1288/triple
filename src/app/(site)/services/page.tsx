@@ -1,4 +1,4 @@
-// src/app/services/page.tsx
+
 import Image from 'next/image';
 import { AcademicCapIcon, BookOpenIcon, ComputerDesktopIcon, UserGroupIcon, GlobeAltIcon, ChartBarIcon } from '@heroicons/react/24/outline';
 
