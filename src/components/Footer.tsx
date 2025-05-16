@@ -20,6 +20,7 @@ export default function Footer() {
               <p className="text-gray-400">123 Business Street<br/>Khaplu, NY 10001</p>
             </div>
           </div>
+          
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
             <p>&copy; {new Date().getFullYear()} Triple Organization. All rights reserved.</p>
             <p className="  text-end text-gray-400">elibU</p>
