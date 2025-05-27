@@ -10,16 +10,15 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
           <div className="grid md:grid-cols-3 gap-8">
 
-            {/* use card  */}
-            <ServiceCard 
+            <ServiceCard
               title="Education"
               description=" Provides educational resources, books, and technology to schools and families, promoting literacy and learning. Offers teacher support and student programs to foster a love of reading."
             />
-            <ServiceCard 
+            <ServiceCard
               title="Educational Testing Service (ETS)"
               description="Develops and administers assessments, including the TOEFL and GRE, to support student learning and education. Offers research-based educational resources and services."
             />
-            <ServiceCard 
+            <ServiceCard
               title="Training"
               description="Technical training programs"
             />

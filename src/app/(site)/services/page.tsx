@@ -5,7 +5,7 @@ import { AcademicCapIcon, BookOpenIcon, ComputerDesktopIcon, UserGroupIcon, Glob
 export default function EducationServicesPage() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+ 
       <section className="relative h-96 bg-gray-900">
         <Image
           src="/images/2.jpg"

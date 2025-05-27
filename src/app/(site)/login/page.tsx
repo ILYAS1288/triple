@@ -1,82 +1,47 @@
-"use client";
+'use client'; // Only if you're using the App Router
 
-import Image from "next/image";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState } from 'react';
 
 export default function LoginPage() {
-  const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    window.location.href = "http://localhost:3001";
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+    // Add login API logic here
+    console.log('Logging in with', { email, password });
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-gray-900">
-      <Image
-        src="/images/2.jpg"
-        alt="Background"
-        fill
-        className="object-cover opacity-50"
-        sizes="100vw"
-        quality={75}
-      />
-      <div className="absolute inset-0 bg-black/40"></div>
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-80">
+        <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
 
-      <div className="relative z-10 w-full max-w-md p-8 bg-white/80 backdrop-blur-lg rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-900 text-center mb-6">
-          Sign In
-        </h1>
+        <label className="block text-sm mb-1">Email</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full p-2 mb-4 border rounded"
+          required
+        />
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              autoComplete="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 p-2"
-              required
-            />
-          </div>
+        <label className="block text-sm mb-1">Password</label>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="w-full p-2 mb-4 border rounded"
+          required
+        />
 
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-              Password
-            </label>
-            <input
-              type="password"
-              id="password"
-              autoComplete="current-password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 p-2"
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700"
-          >
-            Sign in
-          </button>
-
-          <a
-            href="/register"
-            className="block text-center w-full bg-green-600 text-white py-2 px-4 rounded-md mt-2 hover:bg-green-700"
-          >
-            Register
-          </a>
-        </form>
-      </div>
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+        >
+          Login
+        </button>
+      </form>
     </div>
   );
-} 
+}

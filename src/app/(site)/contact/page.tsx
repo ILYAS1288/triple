@@ -43,7 +43,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact  Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Information */}
