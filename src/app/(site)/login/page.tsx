@@ -1,4 +1,4 @@
-'use client'; // Only if you're using the App Router
+'use client'; 
 
 import { useState } from 'react';
 

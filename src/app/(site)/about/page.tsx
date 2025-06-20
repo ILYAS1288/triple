@@ -1,4 +1,4 @@
-// src/app/about/page.tsx
+
 import Image from 'next/image';
 import { BookOpenIcon, AcademicCapIcon, UsersIcon } from '@heroicons/react/24/outline';
 

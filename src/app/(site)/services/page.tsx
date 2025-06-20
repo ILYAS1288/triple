@@ -1,6 +1,14 @@
-
 import Image from 'next/image';
 import { AcademicCapIcon, BookOpenIcon, ComputerDesktopIcon, UserGroupIcon, GlobeAltIcon, ChartBarIcon } from '@heroicons/react/24/outline';
+import jwt from 'jsonwebtoken';
+
+export function signToken(payload: object) {
+  return jwt.sign(payload, process.env.JWT_SECRET!, { expiresIn: '1d' });
+}
+
+export function verifyToken(token: string) {
+  return jwt.verify(token, process.env.JWT_SECRET!);
+}
 
 export default function EducationServicesPage() {
   return (
