@@ -24,7 +24,6 @@ const MemberPage = () => {
           <p className="text-gray-700">
             <strong>Name:</strong> {user.name}
           </p>
-          
           <p className="text-gray-700">
             <strong>Email:</strong> {user.email}
           </p>
@@ -40,8 +39,6 @@ const MemberPage = () => {
           </button>
         </div>
       </div>
-
-
        <div className="w-full max-w-md ml-5  p-6 bg-white rounded-2xl shadow-lg">
         <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
           Member Profile

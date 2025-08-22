@@ -16,8 +16,6 @@ interface Event {
   description: string;
   category: "education" | "sports" | "community";
 }
-
-
 const isAdmin = true; 
 
 export default function EventsPage() {
