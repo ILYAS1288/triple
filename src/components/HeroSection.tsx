@@ -6,7 +6,6 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-[calc(100vh-10rem)] flex items-center">
       {/* Background Image with Overlay */}
-      
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/2.jpg"
@@ -17,8 +16,7 @@ export default function HeroSection() {
         />
         <div className="absolute inset-0 bg-black/50" />
       </div>
-
-      {/* Hero Content - Left Aligned */}
+            {/* Hero Content - Left Aligned */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
         <div className="max-w-2xl ml-0 lg:ml-20">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight text-left">
