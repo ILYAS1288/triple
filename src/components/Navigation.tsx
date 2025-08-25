@@ -49,7 +49,7 @@ export default function Navigation() {
             </button>
           </div>
 
-          {/* Mobile  Menu Button */}
+          {/* Mobile Button */}
           <div className="flex items-center md:hidden">
             <button 
               className="p-2"
@@ -59,7 +59,7 @@ export default function Navigation() {
             </button>
           </div>
         </div>
-        {/* Mobile Menu Dropdown */}
+        {/* Mobile  Dropdown */}
         {isMobileMenuOpen && (
           <div className="md:hidden px-4 pb-4 space-y-2">
             <Link 
