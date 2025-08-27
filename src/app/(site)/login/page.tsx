@@ -8,10 +8,9 @@ export default function LoginPage() {
 
 const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
-    // Add login API logic here
+    // Add login API logic 
     console.log('Logging in with', { email, password });
   };
-
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-80">
